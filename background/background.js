@@ -1,14 +1,9 @@
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  if (request.action === 'openPopup') {
-    // Stocker temporairement le texte du prompt
-    chrome.storage.local.set({
-      lastPrompt: request.text
-    }, function() {
-      // Ouvrir le popup
-      chrome.action.openPopup();
-    });
+chrome.runtime.onMessage.addListener((request, sender) => {
+  if (request.action === 'triggerPopup') {
+    chrome.action.openPopup({ tabId: sender.tab.id });
   }
 });
+
 
 // Lors de l'installation de l'extension
 chrome.runtime.onInstalled.addListener(function(details) {
