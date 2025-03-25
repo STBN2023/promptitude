@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimiseur de Prompts</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Optimiseur de Prompts</h1>
+      <div class="score">Score: <span id="score">0</span>/100</div>
+    </header>
+
+    <div class="tabs">
+      <button id="tab-editor" class="tab active">Votre Prompt</button>
+      <button id="tab-improved" class="tab">Version Améliorée</button>
+    </div>
+
+    <div id="editor-panel" class="panel active">
+      <textarea id="prompt-input" placeholder="Entrez votre prompt ici..."></textarea>
+      <button id="analyze-btn">Analyser</button>
+    </div>
+
+    <div id="improved-panel" class="panel">
+      <div id="improved-prompt" class="improved-box"></div>
+      <button id="use-improved-btn">Appliquer cette version</button>
+    </div>
+
+    <div class="suggestions-section">
+      <h2>Suggestions d'amélioration</h2>
+      <div id="suggestions-container">
+        <div class="empty-state">
+          Entrez votre prompt pour recevoir des suggestions d'amélioration
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <button id="help-btn" class="help-btn">Guide d'utilisation</button>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
