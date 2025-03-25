@@ -16,18 +16,21 @@
       "128": "icons/icon128.png"
     }
   },
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage", "activeTab", "scripting", "<all_urls>"],
   "host_permissions": [
     "https://chat.openai.com/*",
     "https://claude.ai/*",
-    "https://bard.google.com/*"
+    "https://bard.google.com/*",
+    "https://chat.mistral.ai/*",
+    "https://api.example.com/*"
   ],
   "content_scripts": [
     {
       "matches": [
         "https://chat.openai.com/*",
         "https://claude.ai/*",
-        "https://bard.google.com/*"
+        "https://bard.google.com/*",
+        "https://chat.mistral.ai/*"
       ],
       "js": ["content-scripts/content.js"],
       "css": ["content-scripts/content.css"]
