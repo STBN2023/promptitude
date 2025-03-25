@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Afficher l'aide
   helpBtn.addEventListener('click', () => {
     chrome.tabs.create({
-      url: "https://votre-site.com/guide-prompting"
+      url: "https://unequaled-persimmon-f86.notion.site/Promptitude-l-extension-chrome-1c189f61364c801197fbff903264c884"
     });
   });
 

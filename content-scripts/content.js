@@ -7,8 +7,8 @@
     platform = 'chatgpt';
   } else if (url.includes('claude.ai')) {
     platform = 'claude';
-  } else if (url.includes('bard.google.com')) {
-    platform = 'bard';
+  } else if (url.includes('chat.mistral.ai')) {
+    platform = 'mistral';
   } else {
     return; // Pas une plateforme supportée
   }
