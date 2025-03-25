@@ -57,21 +57,23 @@
     // Ajouter l'événement au clic sur le bouton
     button.addEventListener('click', function() {
       let text;
-      if (platform === 'claude' && textarea.textContent) {
-        text = textarea.textContent;
+      if (platform === 'claude') {
+        text = textarea.innerText.trim();  // Utiliser innerText pour Claude
       } else if (textarea.value) {
-        text = textarea.value;
-      } else {
+        text = textarea.value.trim();
+      }
+    
+      if (!text) {
         alert('Veuillez d\'abord saisir un prompt.');
         return;
       }
-      
-      // Ouvrir le popup avec le texte actuel
-      chrome.runtime.sendMessage({
-        action: 'openPopup',
-        text: text
+    
+      chrome.storage.local.set({ lastPrompt: text }, function() {
+        // Ouvrir le popup correctement en Manifest V3
+        chrome.runtime.sendMessage({ action: 'triggerPopup' });
       });
     });
+    
     
     // Ajouter le bouton au conteneur et le conteneur au document
     buttonContainer.appendChild(button);
