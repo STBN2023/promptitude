@@ -3,7 +3,7 @@
   const url = window.location.href;
   let platform = '';
   
-  if (url.includes('chat.openai.com')) {
+  if (url.includes('chatgpt.com')) {
     platform = 'chatgpt';
   } else if (url.includes('claude.ai')) {
     platform = 'claude';
